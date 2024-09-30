@@ -8,11 +8,12 @@
   color: #000;
   margin-bottom: 3vh;
   background-color: #deef3f;
-  font-size: 1.3rem;
-  padding: 5px 25px;
+  font-size: 3rem;
   border-radius: 20px;
-  width: 16vw;
+  width: 35vw;
   text-align: center;
+  padding: 15px;
+  border-radius: 20px;
 }
 .container {
   display: grid;
@@ -98,8 +99,6 @@
 @media (min-width: 1600px) {
   #blog h2 {
     margin-bottom: 1.5vh;
-    font-size: 2rem;
-    width: 20vw;
   }
   .container {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));

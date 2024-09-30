@@ -150,7 +150,7 @@ section#servicios {
 /* Cuando se abre, el modal baja suavemente a su lugar */
 .carousel {
   position: relative;
-  width: 40vw;
+  width: 47vw;
   height: 44vh;
   overflow: hidden;
   background-color: #deef3f;
@@ -169,11 +169,11 @@ section#servicios {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   font-style: italic;
   text-align: center;
-  padding: 0 20px;
+  padding: 50px;
   color: #000000;
 }
 
@@ -231,6 +231,9 @@ section#servicios {
 }
 
 @media (min-width: 1600px) {
+  .carousel-item {
+    font-size: 3rem;
+  }
 }
 
 /* Estilo del botón de cerrar */

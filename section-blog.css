@@ -12,7 +12,7 @@
   border-radius: 20px;
   width: 35vw;
   text-align: center;
-  padding: 15px;
+  padding: 5px 2px;
   border-radius: 20px;
 }
 .container {
@@ -84,12 +84,13 @@
 
 .experience {
   font-size: 0.9em;
-  width: 20vw;
-  line-height: 1.4;
+  width: 23vw;
+  line-height: 1.1;
   color: #000;
   margin-top: auto;
   padding-top: 15px;
   border-top: 1px solid #efefef;
+  text-align: justify;
 }
 @media (max-width: 768px) {
   .container {
@@ -108,8 +109,5 @@
     font-size: 1.2em;
     width: 35vw;
     padding-top: 5px;
-  }
-  .card{
-    padding: 15px 20px;
   }
 }

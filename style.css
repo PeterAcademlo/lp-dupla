@@ -169,6 +169,9 @@ header nav a:nth-child(5).active ~ .indicator {
 }
 
 .button-contact-1 {
+  position: fixed;
+  bottom: 30px;
+  right: 60px;
   display: flex;
   text-align: center;
   justify-content: center;

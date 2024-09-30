@@ -33,7 +33,19 @@ section#home.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*  background-color: #b4fd74;*/
+  animation: moveUpDown 2s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+  0% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(9px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
 }
 
 .image-container img {

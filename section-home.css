@@ -1,0 +1,112 @@
+/* Ajuste del ancho del contenido del section */
+section#home.active {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* Asegura que el contenido esté en una fila (uno al lado del otro) */
+  margin: 0 auto;
+  gap: 2rem; /* Espacio entre los elementos */
+  position: relative;
+  bottom: 10%;
+}
+
+/* Sección Home - Ajuste de flexbox */
+.container-home-general {
+  display: flex;
+  flex-direction: row; /* Asegura que el contenido esté en una fila */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  padding: 20px; /* Espaciado opcional */
+}
+
+/* Ajustes del contenedor de contenido */
+.content {
+  flex: 1; /* Permite que el contenido tome el 50% del espacio disponible */
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding-right: 2rem; /* Separación entre el texto y la imagen */
+}
+
+/* Ajustes del contenedor de imagen */
+.image-container {
+  flex: 1; /* Permite que la imagen tome el 50% del espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*  background-color: #b4fd74;*/
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 35vw; /* Limitar el tamaño máximo de la imagen */
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Estilos de los botones de llamada a la acción */
+.cta-buttons {
+  display: flex;
+  justify-content: flex-start; /* Alinear botones a la izquierda */
+  gap: 1.5rem;
+  margin-top: 1.5rem; /* Añadir margen superior */
+}
+
+.cta-buttons i {
+  font-size: 2.7rem;
+  background-color: #deef3f;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.bxl-instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    /* Naranja */ #e6683c 25%,
+    /* Rojo anaranjado */ #dc2743 50%,
+    /* Rojo */ #cc2366 75%,
+    /* Rosa oscuro */ #bc1888 100% /* Púrpura */
+  );
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.bxl-facebook:hover {
+  background: linear-gradient(
+    45deg,
+    #1877f2,
+    /* Azul oficial de Facebook */ #3b5998
+      /* Otro tono clásico de azul usado en el pasado */
+  );
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+section h1 {
+  font-style: italic;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  section#home.active {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    width: 100%; /* Ajustar el ancho completo */
+  }
+
+  .content {
+    text-align: center; /* Centrar el texto en móviles */
+    padding-right: 0; /* Eliminar el padding lateral */
+    margin-bottom: 1.5rem; /* Añadir margen inferior para separar texto de la imagen */
+  }
+
+  .image-container img {
+    width: 60vw; /* Imagen más pequeña en móviles */
+    max-width: 300px; /* Limitar tamaño máximo en móviles */
+  }
+
+  .cta-buttons {
+    justify-content: center; /* Centrar los botones en móviles */
+  }
+}

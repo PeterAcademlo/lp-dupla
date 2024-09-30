@@ -1,0 +1,256 @@
+/* CSS para la sección Pages */
+section#servicios {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos en el eje vertical */
+  justify-content: center; /* Centra los elementos en el eje horizontal */
+  padding: 20px; /* Espaciado opcional */
+  width: 90vw;
+  position: absolute;
+  top: 5%;
+}
+
+#servicios h2 {
+  font-size: 3rem;
+  background-color: #deef3f;
+  color: #000;
+  padding: 15px;
+  border-radius: 20px;
+  width: 500px;
+  text-align: center;
+}
+
+.servicios-information{
+  text-align: center;
+  width: 90vw;
+  padding: 30px 0;
+}
+
+.container-services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 130px;
+}
+
+.container-services .glass {
+  position: relative;
+  width: 200px;
+  height: 240px;
+  background-color: #deef3f;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-width: 2px;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 25px; /* Ajustar márgenes para el efecto de rotación */
+  transform: rotate(calc(var(--r) * 1deg));
+}
+
+@media (min-width: 1600px) {
+  .container-services {
+    margin-top: 100px;
+  }
+  #servicios h2 {
+    margin-bottom: 60px;
+  }
+  .container-services .glass {
+    width: 250px;
+    height: 300px;
+    font-size: 1.3rem;
+  }
+  .servicios-information{
+    width: 85vw;
+    font-size: 1.9rem;
+    padding: 20px 0;
+  }
+}
+
+.container-services:hover .glass {
+  transform: rotate(0deg);
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.container-services .glass::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+}
+
+.container-services .glass i {
+  font-size: 4rem;
+  color: #000000;
+}
+
+/* Estilos generales del modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Transición inicial */
+  transition: opacity 0.3s ease; /* Transición de la opacidad */
+}
+
+.modal.show {
+  display: flex; /* Mostramos el modal con flex */
+  opacity: 1; /* Cambia a visible */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding-top: 30px;
+  border-radius: 10px;
+  width: 50%; /* Todos los modales tendrán la misma medida */
+  height: 60%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-50px);
+  transition: transform 0.3s ease; /* Transición suave para la animación */
+  display: flex;
+  flex-direction: column;
+  justify-content: start; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  text-align: center; /* Centra el texto dentro del modal */
+}
+
+.modal-content h3 {
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content {
+  text-align: left; /* Asegura que el contenido del modal esté alineado a la izquierda */
+}
+
+.modal.show .modal-content {
+  transform: translateY(
+    0
+  ); 
+}
+
+
+/* Cuando se abre, el modal baja suavemente a su lugar */
+.carousel {
+  position: relative;
+  width: 45vw;
+  height: 44vh;
+  overflow: hidden;
+  background-color: #deef3f;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  padding: 0 20px;
+  color: #000000;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #deef3f;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bx-chevron-right,
+.bx-chevron-left{
+  font-size: 2rem;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+.carousel-control.prev { left: 10px; }
+.carousel-control.next { right: 10px; }
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background-color: #000000;
+}
+
+/* Adjust modal content for carousel */
+.modal-content {
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+@media (min-width: 1600px) {
+
+
+}
+
+/* Estilo del botón de cerrar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close i {
+  font-size: 28px;
+  color: #000; /* Color del ícono */
+  transition: color 0.5s ease;
+}
+
+.close i:hover {
+  color: #ffffff;
+  background-color: #000;
+  border-radius: 10px; /* Color al pasar el mouse */
+}

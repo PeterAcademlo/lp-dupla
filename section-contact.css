@@ -1,0 +1,198 @@
+section#widgets {
+  position: absolute; /* O también puedes usar fixed */
+  top: 7%;
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.contact-section {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-title {
+  background-color: #deef3f;
+  font-size: 1.3rem;
+  color: #000;
+  padding: 5px 25px;
+  border-radius: 20px;
+  margin-left: 15px;
+}
+
+.contact-subtitle {
+  color: #333;
+}
+
+#contactForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.infocontact {
+  width: 73vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infocontact-1,
+.infocontact-2 {
+  width: 35vw;
+}
+
+.form-group {
+  margin-bottom: 50px;
+}
+
+label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: solid 1px #000000;
+}
+
+textarea:hover,
+input:hover {
+  background-color: #deef3f;
+  transition: 0.5s;
+}
+
+textarea {
+  height: 25vh;
+  resize: none;
+  overflow-y: hidden;
+}
+
+@media (min-width: 1600px) {
+  textarea {
+    height: 35vh; /* Altura ajustada para pantallas grandes */
+  }
+}
+
+.radio-group {
+  width: 73vw;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: start;
+}
+
+.radio-option {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-option label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + label {
+  border-color: #deef3f;
+  background-color: #deef3f;
+}
+
+.radio-option input[type="radio"]:checked + label::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.button-enviar-contact {
+  position: relative;
+  border: 2px solid #deef3f;
+  background-color: #deef3f;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 23px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  bottom: 2rem;
+  transition: .5s;
+}
+
+.button-enviar-contact:hover{
+  border: 2px solid black;
+  transition: .5s;
+}
+
+.star {
+  width: 200px;
+  height: 200px;
+}
+
+.star-black {
+  background-color: #1c1c1c;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.star-green {
+  background-color: #deef3f;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  transform: scale(0.5) translate(50%, 100%);
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dupla</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="section-home.css" />
+    <link rel="stylesheet" href="section-servicios.css" />
+    <link rel="stylesheet" href="section-contact.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="#home" class="logo">
+            <img src="img/Dupla.png" class="imgage-logo" />
+        </a>
+        <nav class="nav-links">
+            <a href="#home" aria-label="Ir a Inicio" style="--clr:#deef3f;" class="active">
+                <span class="icon"><i class='bx bx-home'></i></span>
+                <span class="text">Inicio</span>
+            </a>
+
+            <a href="#servicios" data-section="pages" style="--clr:#deef3f;">
+                <span class="icon"><i class='bx bx-file'></i></span>
+                <span class="text">servicios</span>
+            </a>
+            <a href="#widgets" data-section="widgets" style="--clr:#deef3f;">
+                <span class="icon"><i class='bx bx-rocket'></i></span>
+                <span class="text">Contactame</span>
+            </a>
+            <a href="#blog" data-section="blog" style="--clr:#deef3f;">
+                <span class="icon"><i class='bx bx-news'></i></span>
+                <span class="text">Blog</span>
+            </a>
+            <a href="#landing" data-section="landing" style="--clr:#deef3f;">
+                <span class="icon"><i class='bx bx-grid'></i></span>
+                <span class="text">landing</span>
+            </a>
+            <div class="indicator"></div>
+        </nav>
+        <div class="button-contact-1">
+
+            <i class='bx bxl-whatsapp' style='color:#ffffff'></i>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="active">
+            <div class="container-home-general">
+                <div class="content animate-fadeInUp">
+                    <h1>
+                        AGENCIA DE PUBLICIDAD Y<br>
+                        MARKETING DIGITAL
+                    </h1>
+                    <p>
+                        Impulsa tu negocio con nuestras soluciones de marketing diseñadas especialmente para pequeñas y
+                        medianas empresas.
+                    </p>
+                    <div class="cta-buttons">
+                        <i class='bx bxl-instagram'></i>
+                        <i class='bx bxl-facebook'></i>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="img/Captura_de_pantalla_2024-09-28_165912-removebg-preview.png">
+                </div>
+            </div>
+
+        </section>
+
+        <section id="servicios">
+            <h2>¿Qué ofrecemos?</h2>
+            <p class="servicios-information">Impulsamos tu marca desde cero. Desde la identidad visual hasta la
+                estrategia digital, te ofrecemos
+                soluciones integrales para destacar en el mercado.</p>
+            <div class="container-services">
+                <div class="glass" style="--r:25;" data-text="Marketing" onclick="openModal('modal1')">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <div class="glass" style="--r:25;" data-text="Diseño pag. Web" onclick="openModal('modal2')">
+                    <i class='bx bx-rocket'></i>
+                </div>
+                <div class="glass" style="--r:25;" data-text="Fotografía y Video" onclick="openModal('modal3')">
+                    <i class='bx bx-money'></i>
+                </div>
+            </div>
+        </section>
+        <!-- Modal 1 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">
+                    <i class='bx bx-x'></i>
+                </span>
+                <h3>Marketing</h3>
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <li class="carousel-item">Creación de redes sociales</li>
+                        <li class="carousel-item">Post para Facebook, Instagram</li>
+                        <li class="carousel-item">Producción de contenido</li>
+                        <li class="carousel-item">Estudio de mercado</li>
+                        <li class="carousel-item">Estrategia de marca</li>
+                        <li class="carousel-item">Segmentación de público objetivo</li>
+                        <li class="carousel-item">Creación de logo</li>
+                    </div>
+                    <button class="carousel-control prev"><i class='bx bx-chevron-left'></i></button>
+                    <button class="carousel-control next"><i class='bx bx-chevron-right'></i></button>
+                    <div class="carousel-indicators"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">
+                    <i class='bx bx-x'></i>
+                </span>
+                <h3>Diseño de página web</h3>
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <li class="carousel-item">Diseño de página web</li>
+                        <li class="carousel-item">Rediseño y optimización</li>
+                        <li class="carousel-item">Otros servicios relacionados</li>
+                    </div>
+                    <button class="carousel-control prev"><i class='bx bx-chevron-left'></i></button>
+                    <button class="carousel-control next"><i class='bx bx-chevron-right'></i></button>
+                    <div class="carousel-indicators"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3 -->
+        <div id="modal3" class="modal" onmouseover="pauseCarousel()" onmouseout="resumeCarousel()">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">
+                    <i class='bx bx-x'></i>
+                </span>
+                <h3>Fotografía y Video</h3>
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <li class="carousel-item">Video Marketing para emprendimientos</li>
+                        <li class="carousel-item">Grabación de reels</li>
+                        <li class="carousel-item">Fotografía de productos</li>
+                        <li class="carousel-item">Animación en motion graphic</li>
+                        <li class="carousel-item">Edición de videos</li>
+                        <li class="carousel-item">Pantalla verde</li>
+                        <li class="carousel-item">Cobertura de eventos</li>
+                        <li class="carousel-item">Retratos familiares</li>
+                    </div>
+                    <button class="carousel-control prev"><i class='bx bx-chevron-left'></i></button>
+                    <button class="carousel-control next"><i class='bx bx-chevron-right'></i></button>
+                    <div class="carousel-indicators"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="contact-section" id="widgets">
+            <div class="contact-header">
+                <div class="contact-title">Contáctanos</div>
+            </div>
+            <div class="form-container">
+                <div class="form-left">
+                    <form id="contactForm">
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="say-hi" name="contact-type" value="say-hi">
+                                <label for="say-hi"></label>
+                                <span>Borrar información</span>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="get-quote" name="contact-type" value="get-quote" checked>
+                                <label for="get-quote"></label>
+                                <span>Solicitar una cotización</span>
+                            </div>
+                        </div>
+                        <div class="infocontact">
+                            <div class="infocontact-1">
+                                <div class="form-group">
+                                    <label for="name">Nombre:</label>
+                                    <input type="text" id="name" name="name" placeholder="Ej: Peter Douglas" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="Ej: pet20cds@gmail.com"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="infocontact-2">
+                                <div class="form-group">
+                                    <label for="message">Mensaje:</label>
+                                    <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+                                </div>
+                                <button class="button-enviar-contact" type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--     
+                <div class="form-right">
+                    <div class="star star-black"></div>
+                    <div class="star star-green"></div>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <section id="landing">
+            <h2>Landing Section</h2>
+            <p>This is the Landing section. You can add content here for this section.</p>
+        </section>
+
+        <section id="blog">
+            <h2>Blog Section</h2>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

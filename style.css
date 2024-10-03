@@ -143,7 +143,7 @@ header nav a:nth-child(1).active ~ .indicator {
 }
 
 header nav a:nth-child(2).active ~ .indicator {
-  transform: translateX(calc(70px * 1));
+  transform: translateX(calc(70px * 2));
 }
 
 header nav a:nth-child(3).active ~ .indicator {
@@ -158,10 +158,22 @@ header nav a:nth-child(5).active ~ .indicator {
   transform: translateX(calc(70px * 4));
 }
 
+.nav-links a:nth-of-type(2), /* Segundo enlace (Blog) */
+.nav-links a:nth-of-type(4) { /* Cuarto enlace (Landing) */
+    opacity: 0; /* Cambia la opacidad para que sean translúcidos */
+    pointer-events: none; /* Desactiva la interacción, no se puede hacer clic */
+    cursor: default; /* Cambia el cursor a uno por defecto para indicar que no es clicable */
+}
+
+
 .button-contact {
   width: 10px;
   background-color: #4b5563;
   height: 10px;
+}
+
+.logo2 {
+  display: none;
 }
 
 .imgage-logo {
@@ -268,5 +280,33 @@ p {
   }
   p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+  .logo2 {
+    display: block;
+    z-index: 500;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+  }
+  header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    bottom: 0; /* Cambia esto si quieres ajustar la posición del header */
+    left: 0;
+    transform: translateX(0);
+    border-radius: 0;
+    justify-content: center;
+  }
+  .button-contact-1 {
+    display: none;
   }
 }

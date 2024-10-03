@@ -84,6 +84,11 @@ input:hover {
   transition: 0.5s;
 }
 
+textarea:focus,
+input:focus {
+  outline: none; /* Elimina el borde naranja predeterminado */
+}
+
 textarea {
   height: 25vh;
   resize: none;
@@ -151,12 +156,12 @@ textarea {
   cursor: pointer;
   width: 100%;
   bottom: 2rem;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.button-enviar-contact:hover{
+.button-enviar-contact:hover {
   border: 2px solid black;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .star {
@@ -195,4 +200,75 @@ textarea {
     39% 35%
   );
   transform: scale(0.5) translate(50%, 100%);
+}
+
+@media (max-width: 600px) {
+  section#widgets {
+    top: 8%;
+    width: 95vw;
+    height: 74vh;
+    border-radius: 20px;
+  }
+  .contact-section {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .contact-title {
+    margin-left: 0;
+  }
+  .radio-group {
+    width: 90vw;
+    margin-bottom: 5px;
+    justify-content: center;
+    text-align: center;
+  }
+  label {
+    display: block;
+    font-size: 1rem;
+    margin: 0 0 0 0;
+  }
+  .radio-option {
+    margin-right: 2px;
+  }
+  .radio-option label {
+    width: 20px;
+    height: 20px;
+  }
+  span {
+    line-height: 0.9;
+  }
+  .infocontact {
+    width: 86vw;
+    flex-direction: column;
+    align-items: start;
+  }
+  .form-group {
+    margin-bottom: 5px;
+  }
+  label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .infocontact-2,
+  .infocontact-1 {
+    font-size: .9rem;
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+  .button-enviar-contact {
+    padding: 6px;
+    font-size: 20px;
+    width: 50%;
+    bottom: 0rem;
+    left: 25%;
+  }
 }

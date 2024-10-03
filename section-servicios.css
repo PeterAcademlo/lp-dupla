@@ -30,7 +30,6 @@ section#servicios {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 130px;
 }
 
 .container-services .glass {
@@ -255,4 +254,88 @@ section#servicios {
   color: #ffffff;
   background-color: #000;
   border-radius: 10px; /* Color al pasar el mouse */
+}
+
+@media (max-width: 600px) {
+  section#servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos en el eje vertical */
+    justify-content: center; /* Centra los elementos en el eje horizontal */
+    padding: 0px; /* Espaciado opcional */
+    text-align: center;
+    width: 100vw;
+    position: absolute;
+    top: 5%;
+  }
+  #servicios h2 {
+    font-size: 2rem;
+    background-color: #deef3f;
+    margin: 1.2rem 1rem 1rem 1rem;
+    width: 90%;
+    text-align: center;
+  }
+  #servicios p {
+    text-align: center;
+    width: 100vw;
+    padding: 10px;
+  }
+  .container-services {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+    justify-content: center;
+    width: 100vw;
+  }
+  .container-services .glass {
+    width: 135px; /* Reduce el tamaño para pantallas pequeñas */
+    height: 150px;
+    margin: 5px; /* Ajustar los márgenes para evitar desbordamiento */
+    transform: none; /* Elimina la rotación para que los elementos se adapten mejor */
+  }
+
+  .container-services .glass::before {
+    padding: 0.1rem;
+    line-height: 0.9;
+  }
+  .container-services .glass i {
+    font-size: 2.5rem; /* Reducir el tamaño del ícono para pantallas pequeñas */
+    margin: 1rem;
+  }
+  .servicios-information {
+    padding: 10px 0;
+  }
+  /* carrusel */
+  .modal-content h3 {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin: 1rem;
+  }
+  .modal-content {
+    width: 85%; /* Todos los modales tendrán la misma medida */
+    height: 75%;
+  }
+  .carousel {
+    position: relative;
+    width: 75vw;
+    height: 50vh;
+    overflow: hidden;
+    background-color: #deef3f;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+  }
+  .carousel-item {
+    font-size: 1.5rem;
+    padding: 45px;
+  }
+  .carousel-control.prev {
+    left: 5px;
+  }
+  .carousel-control.next {
+    right: 5px;
+  }
 }

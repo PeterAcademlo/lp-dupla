@@ -1,8 +1,26 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+:root {
+  --circle-top-right-out: circle(0% at 100% 0); 
+  --circle-bottom-right-in: circle(
+    150% at 100% 100%
+  );
+}
+@keyframes in-circle-swoop {
+  from {
+    clip-path: var(--circle-top-right-out); 
+  }
+  to {
+    clip-path: var(--circle-bottom-right-in);
+  }
+}
+
+[transition-style="in:custom:circle-swoop"] {
+  --transition__duration: 1s;
+  animation: in-circle-swoop var(--transition__duration) both;
 }
 
 body {
@@ -30,11 +48,11 @@ a {
 /* Header styles */
 header {
   position: fixed;
-  bottom: 50px; /* Cambia esto si quieres ajustar la posición del header */
+  bottom: 50px; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 10000;
-  width: 90vw; /* Asegúrate de que esto coincida con el ancho deseado */
+  width: 90vw; 
   height: 60px;
   background: #fff;
   display: flex;
@@ -90,18 +108,19 @@ header nav a .text {
   padding: 2px 7px;
   border-radius: 12px;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.65rem; /* Tamaño más pequeño por defecto */
   letter-spacing: 0.05rem;
   transition: 0.5s;
   transform: translateY(15px);
-  opacity: 0;
+  opacity: 1; /* Siempre visible */
 }
 
 header nav a.active .text {
   transform: translateY(-4px);
   background: var(--clr);
-  opacity: 1;
+  font-size: 0.75rem; /* Tamaño un poco más grande cuando está seleccionado */
 }
+
 
 .indicator {
   position: absolute;
@@ -158,11 +177,11 @@ header nav a:nth-child(5).active ~ .indicator {
   transform: translateX(calc(70px * 4));
 }
 
-.nav-links a:nth-of-type(2), /* Segundo enlace (Blog) */
-.nav-links a:nth-of-type(4) { /* Cuarto enlace (Landing) */
-    opacity: 0; /* Cambia la opacidad para que sean translúcidos */
-    pointer-events: none; /* Desactiva la interacción, no se puede hacer clic */
-    cursor: default; /* Cambia el cursor a uno por defecto para indicar que no es clicable */
+.nav-links a:nth-of-type(2),
+.nav-links a:nth-of-type(4){ 
+    opacity: 0; 
+    pointer-events: none; 
+    cursor: default; 
 }
 
 
@@ -197,13 +216,13 @@ header nav a:nth-child(5).active ~ .indicator {
   padding: 1rem;
   background-color: #25d366;
   border-radius: 50%;
-  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transiciones para transformar y sombra */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .bxl-whatsapp:hover {
-  transform: scale(1.2) rotate(720deg); /* Aumenta el tamaño y realiza un giro completo */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
-  z-index: 1000; /* Asegura que el ícono esté por encima de otros elementos */
+  transform: scale(1.2) rotate(720deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
 /* Para la animación de flotación (opcional) */
@@ -249,19 +268,6 @@ p {
 
 .animate-fadeInUp {
   will-change: opacity, transform;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .image-container {

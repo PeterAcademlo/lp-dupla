@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       activeSection.classList.remove("fadeZoomIn"); // Quita la clase de animación
       setTimeout(() => {
         activeSection.classList.add("animate-fadeInUp"); // Agrega la clase de animación
-      }, 10); // Un pequeño retraso para que se aplique la animación
+      }, 0); // Un pequeño retraso para que se aplique la animación
     }
   }
 

@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  let firstLoad = true; // Variable para rastrear si es la primera carga
+
   // Función para mostrar la sección correspondiente
   function showSection(targetSection) {
     sections.forEach((section) => {
@@ -43,11 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
       activeSection.classList.add("active");
       activeSection.style.display = "block"; // Mostrar solo la sección activa
 
-      // Reiniciar la animación
-      activeSection.classList.remove("fadeZoomIn"); // Quita la clase de animación
-      setTimeout(() => {
-        activeSection.classList.add("animate-fadeInUp"); // Agrega la clase de animación
-      }, 0); // Un pequeño retraso para que se aplique la animación
+      if (!firstLoad) {
+        // Reiniciar la animación
+        activeSection.classList.remove("fadeZoomIn"); // Quita la clase de animación
+        setTimeout(() => {
+          activeSection.classList.add("animate-fadeInUp"); // Agrega la clase de animación
+        }, 10); // Un pequeño retraso para que se aplique la animación
+      } else {
+        firstLoad = false; // Cambia a false después de la primera carga
+      }
     }
   }
 

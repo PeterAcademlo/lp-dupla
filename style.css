@@ -15,35 +15,25 @@
     clip-path: var(--circle-bottom-right-in);
   }
 }
-
 [transition-style="in:custom:circle-swoop"] {
   --transition__duration: 1s;
   animation: in-circle-swoop var(--transition__duration) both;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  background-image: linear-gradient(
+  font-family: "Russo One", sans-serif, Arial;
+  background: linear-gradient(
       rgba(221, 221, 221, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    /* Capa semitransparente sobre la imagen */ url("img/pngwing2.png"); /* Imagen de fondo */
-  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-  background-repeat: no-repeat;
-  background-position: center;
+    url("img/pngwing2.png") no-repeat center/cover;
   color: #111827;
   line-height: 1.5;
-  font-family: "Russo One", sans-serif;
 }
-
-/* Links without decoration */
 a {
   text-decoration: none;
   color: inherit;
 }
-
-/* Header styles */
 header {
   position: fixed;
   bottom: 50px;
@@ -60,17 +50,14 @@ header {
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
   transition: 0.5s;
 }
-
 header:hover {
   filter: drop-shadow(0 5px 15px rgb(222, 239, 63));
   transition: 0.5s;
 }
-
 header nav {
   display: flex;
-  width: 350px; /* Asegúrate de que esto coincida con el ancho deseado */
+  width: 350px;
 }
-
 header nav a {
   position: relative;
   list-style: none;
@@ -84,41 +71,30 @@ header nav a {
   text-align: center;
   font-weight: 500;
 }
-
 header nav a .icon {
-  position: relative;
-  display: block;
-  line-height: 65px;
   font-size: 1.5rem;
-  text-align: center;
   transition: 0.5s;
   color: #666;
 }
-
 header nav a.active .icon {
   transform: translateY(-32px);
   color: var(--clr);
 }
-
 header nav a .text {
   position: absolute;
   color: #000000;
   padding: 2px 7px;
   border-radius: 12px;
-  font-weight: 400;
-  font-size: 0.65rem; /* Tamaño más pequeño por defecto */
+  font-size: 0.65rem;
   letter-spacing: 0.05rem;
   transition: 0.5s;
   transform: translateY(15px);
-  opacity: 1; /* Siempre visible */
 }
-
 header nav a.active .text {
   transform: translateY(-4px);
   background: var(--clr);
-  font-size: 0.75rem; /* Tamaño un poco más grande cuando está seleccionado */
+  font-size: 0.75rem;
 }
-
 .indicator {
   position: absolute;
   top: -35px;
@@ -129,83 +105,61 @@ header nav a.active .text {
   transition: 0.5s;
   z-index: 1;
 }
-
-.indicator::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: -28px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: 15px 18px #fff;
-}
-
+.indicator::before,
 .indicator::after {
   content: "";
   position: absolute;
-  top: 5px;
-  right: -28px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background: transparent;
+}
+.indicator::before {
+  top: 5px;
+  left: -28px;
+  box-shadow: 15px 18px #fff;
+}
+.indicator::after {
+  top: 5px;
+  right: -28px;
   box-shadow: -15px 18px #fff;
 }
-
 header nav a:nth-child(1).active ~ .indicator {
   transform: translateX(calc(70px * 0));
 }
-
 header nav a:nth-child(2).active ~ .indicator {
   transform: translateX(calc(70px * 2));
 }
-
 header nav a:nth-child(3).active ~ .indicator {
   transform: translateX(calc(70px * 2));
 }
-
 header nav a:nth-child(4).active ~ .indicator {
   transform: translateX(calc(70px * 3));
 }
-
 header nav a:nth-child(5).active ~ .indicator {
   transform: translateX(calc(70px * 4));
 }
-
 .nav-links a:nth-of-type(2),
 .nav-links a:nth-of-type(4) {
   opacity: 0;
   pointer-events: none;
   cursor: default;
 }
-
-.button-contact {
-  width: 10px;
-  background-color: #4b5563;
-  height: 10px;
-}
-
 .logo2 {
   display: none;
 }
-
 .imgage-logo {
   width: 100px;
 }
-
 .button-contact-1 {
   position: fixed;
   bottom: 30px;
   right: 60px;
   display: flex;
-  text-align: center;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-
 .bxl-whatsapp {
   position: relative;
   font-size: 3rem;
@@ -214,14 +168,11 @@ header nav a:nth-child(5).active ~ .indicator {
   border-radius: 50%;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
-
 .bxl-whatsapp:hover {
   transform: scale(1.2) rotate(720deg);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
-
-/* Para la animación de flotación (opcional) */
 @keyframes floatIcon {
   0% {
     transform: translateY(0);
@@ -233,41 +184,32 @@ header nav a:nth-child(5).active ~ .indicator {
     transform: translateY(0);
   }
 }
-
-/* Animación de flotación solo al estar en su estado normal */
-
-/* Main content styles */
 main {
   width: 100vw;
   height: 85vh;
-  margin: 6rem auto 0; /* Ajusta el margen superior para compensar el header fijo */
+  margin: 6rem auto 0;
   padding: 0 3vw;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap; /* Asegura que los elementos se acomoden mejor en pantallas pequeñas */
+  flex-wrap: wrap;
 }
-
 h1 {
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
-
 p {
   font-size: 1.5rem;
   color: #4b5563;
   margin-bottom: 2rem;
   width: 48rem;
 }
-
 .animate-fadeInUp {
   will-change: opacity, transform;
   animation: fadeInUp 0.6s ease-out;
 }
-
-/* Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -278,14 +220,11 @@ p {
     transform: scale(1);
   }
 }
-
 .image-container {
   animation: fadeZoomIn 5s ease-out;
   opacity: 1;
   transform: scale(1);
 }
-
-/* Responsive design */
 @media (max-width: 768px) {
   main {
     flex-direction: column;
@@ -297,7 +236,6 @@ p {
     font-size: 1rem;
   }
 }
-
 @media (max-width: 600px) {
   .logo {
     display: none;
@@ -310,12 +248,8 @@ p {
     left: 5px;
   }
   header {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
-    bottom: 0; /* Cambia esto si quieres ajustar la posición del header */
+    bottom: 0;
     left: 0;
     transform: translateX(0);
     border-radius: 0;

@@ -1,15 +1,9 @@
-/* CSS para la sección Pages */
 section#servicios {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra los elementos en el eje vertical */
-  justify-content: center; /* Centra los elementos en el eje horizontal */
-  padding: 20px; /* Espaciado opcional */
+  padding: 20px;
   width: 90vw;
   position: absolute;
   top: 5%;
 }
-
 #servicios h2 {
   font-size: 3rem;
   background-color: #deef3f;
@@ -19,19 +13,16 @@ section#servicios {
   width: 500px;
   text-align: center;
 }
-
 .servicios-information {
   text-align: center;
   width: 90vw;
   padding: 30px 0;
 }
-
 .container-services {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .container-services .glass {
   position: relative;
   width: 200px;
@@ -46,10 +37,9 @@ section#servicios {
   align-items: center;
   transition: 0.5s;
   border-radius: 10px;
-  margin: 0 25px; /* Ajustar márgenes para el efecto de rotación */
+  margin: 0 25px;
   transform: rotate(calc(var(--r) * 1deg));
 }
-
 @media (min-width: 1600px) {
   .container-services {
     margin-top: 100px;
@@ -68,13 +58,11 @@ section#servicios {
     padding: 20px 0;
   }
 }
-
 .container-services:hover .glass {
   transform: rotate(0deg);
   margin: 0 20px;
   cursor: pointer;
 }
-
 .container-services .glass::before {
   content: attr(data-text);
   position: absolute;
@@ -87,15 +75,12 @@ section#servicios {
   align-items: center;
   color: #000000;
 }
-
 .container-services .glass i {
   font-size: 4rem;
   color: #000000;
 }
-
-/* Estilos generales del modal */
 .modal {
-  display: none; /* Oculto por defecto */
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -103,50 +88,43 @@ section#servicios {
   width: 100%;
   height: 100%;
   padding-bottom: 50px;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Transición inicial */
-  transition: opacity 0.3s ease; /* Transición de la opacidad */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-
 .modal.show {
-  display: flex; /* Mostramos el modal con flex */
-  opacity: 1; /* Cambia a visible */
+  display: flex;
+  opacity: 1;
 }
-
 .modal-content {
   background-color: #fff;
   margin: auto;
   padding-top: 30px;
   border-radius: 10px;
-  width: 50%; /* Todos los modales tendrán la misma medida */
+  width: 50%;
   height: 60%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-50px);
-  transition: transform 0.3s ease; /* Transición suave para la animación */
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: start; /* Centra verticalmente el contenido */
-  align-items: center; /* Centra horizontalmente el contenido */
-  text-align: center; /* Centra el texto dentro del modal */
+  justify-content: start;
+  align-items: center;
+  text-align: center;
 }
-
 .modal-content h3 {
   font-style: italic;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-
 .modal-content {
-  text-align: left; /* Asegura que el contenido del modal esté alineado a la izquierda */
+  text-align: left;
 }
-
 .modal.show .modal-content {
   transform: translateY(0);
 }
-
-/* Cuando se abre, el modal baja suavemente a su lugar */
 .carousel {
   position: relative;
   width: 47vw;
@@ -156,13 +134,11 @@ section#servicios {
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
 .carousel-inner {
   display: flex;
   transition: transform 0.3s ease-in-out;
   height: 100%;
 }
-
 .carousel-item {
   flex: 0 0 100%;
   display: flex;
@@ -175,7 +151,6 @@ section#servicios {
   padding: 50px;
   color: #000000;
 }
-
 .carousel-control {
   position: absolute;
   top: 50%;
@@ -187,21 +162,18 @@ section#servicios {
   cursor: pointer;
   z-index: 2;
 }
-
 .bx-chevron-right,
 .bx-chevron-left {
   font-size: 2rem;
   background-color: rgb(0, 0, 0);
   border-radius: 50%;
 }
-
 .carousel-control.prev {
   left: 10px;
 }
 .carousel-control.next {
   right: 10px;
 }
-
 .carousel-indicators {
   position: absolute;
   bottom: 10px;
@@ -210,7 +182,6 @@ section#servicios {
   display: flex;
   gap: 5px;
 }
-
 .carousel-indicator {
   width: 10px;
   height: 10px;
@@ -218,24 +189,18 @@ section#servicios {
   background-color: #ffffff;
   transition: background-color 0.3s ease;
 }
-
 .carousel-indicator.active {
   background-color: #000000;
 }
-
-/* Adjust modal content for carousel */
 .modal-content {
   padding-top: 20px;
   overflow-y: auto;
 }
-
 @media (min-width: 1600px) {
   .carousel-item {
     font-size: 3rem;
   }
 }
-
-/* Estilo del botón de cerrar */
 .close {
   position: absolute;
   top: 10px;
@@ -243,26 +208,19 @@ section#servicios {
   font-size: 24px;
   cursor: pointer;
 }
-
 .close i {
   font-size: 28px;
-  color: #000; /* Color del ícono */
+  color: #000;
   transition: color 0.5s ease;
 }
-
 .close i:hover {
   color: #ffffff;
   background-color: #000;
-  border-radius: 10px; /* Color al pasar el mouse */
+  border-radius: 10px;
 }
-
 @media (max-width: 600px) {
   section#servicios {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los elementos en el eje vertical */
-    justify-content: center; /* Centra los elementos en el eje horizontal */
-    padding: 0px; /* Espaciado opcional */
+    padding: 0px;
     text-align: center;
     width: 100vw;
     position: absolute;
@@ -282,29 +240,27 @@ section#servicios {
   }
   .container-services {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+    flex-wrap: wrap;
     justify-content: center;
     width: 100vw;
   }
   .container-services .glass {
-    width: 135px; /* Reduce el tamaño para pantallas pequeñas */
+    width: 135px;
     height: 150px;
-    margin: 5px; /* Ajustar los márgenes para evitar desbordamiento */
-    transform: none; /* Elimina la rotación para que los elementos se adapten mejor */
+    margin: 5px;
+    transform: none;
   }
-
   .container-services .glass::before {
     padding: 0.1rem;
     line-height: 0.9;
   }
   .container-services .glass i {
-    font-size: 2.5rem; /* Reducir el tamaño del ícono para pantallas pequeñas */
+    font-size: 2.5rem;
     margin: 1rem;
   }
   .servicios-information {
     padding: 10px 0;
   }
-  /* carrusel */
   .modal-content h3 {
     font-style: italic;
     font-size: 1.6rem;
